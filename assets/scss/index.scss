@@ -1,5 +1,5 @@
 html, body {
-  width: 100%;
+  width: auto;
   height: 100%;
   background-color: #deffe2;
   padding: 0;
@@ -23,6 +23,7 @@ html, body {
 .user__form {
   margin: 0 auto;
   padding: 0 36px;
+  max-width: unset;
 
   @media (min-width: 992px) {
     max-width: 900px;
@@ -59,6 +60,7 @@ html, body {
 }
 
 .form__label {
+  max-width: 100px;
   font-size: 15px;
   font-weight: 600;
   color: #222222;
@@ -67,6 +69,7 @@ html, body {
 
 .form__input {
   width: 65%;
+  max-width: calc(100% - 100px);
   height: 15px;
   border: none;
   border-radius: 5px;
@@ -96,13 +99,40 @@ html, body {
 
 .error {
   display: none;
-  color: red;
+  width: 65%;
+  max-width: calc(100% - 100px);
+  font-size: 11px;
+  color: #ff0000;
+  padding: 0 0 0 34%;
+  background-image: url('../images/error_icon.png');
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: 30% 50%;
+  margin-top: 5px;
+
+  @media (min-width: 992px) {
+    width: 85%;
+    padding: 0 0 0 15%;
+    background-position: 13% 50%;
+  }
 }
 
 .rule {
-  max-width: 900px;
+  max-width: unset;
   margin: 25px auto 0;
   padding: 0 36px;
+
+  @media (min-width: 992px) {
+    max-width: 900px;
+  }
+}
+
+.rule__title {
+  height: 26px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 14px;
+  line-height: 1.14;
+  color: #999999;
 }
 
 .rule__list {

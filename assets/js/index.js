@@ -24,11 +24,14 @@ $(() => {
   $('.selected-flag').text('TW +886');
 
   $('.js-submit').on('click', ()=> {
-    const intlNumber = $("#phone").intlTelInput("getNumber");
-    const isValid = $("#phone").intlTelInput("isValidNumber");
+    const phone = $('#phone').val();
+    const formatNumber = libphonenumber.format(phone, 'TW', 'E.164');
+    const isValid = libphonenumber.isValidNumber(phone, 'TW');
     if (!isValid) {
       $('.number-error').show();
     }
+
+    console.log(libphonenumber.isValidNumber(phone, 'TW'));
 
     const name = $('#name').val();
     if(!$.trim(name).length) {
@@ -41,15 +44,15 @@ $(() => {
       $('.email-error').show();
     }
 
-    console.log(intlNumber);
     console.log(isValid);
     console.log(name);
     console.log(email);
+    console.log(formatNumber);
 
     let database = firebase.database().ref('iap_list');
     let key = database.push({
       userName: name,
-      userPhone: intlNumber,
+      userPhone: formatNumber,
       userEmail: email,
       uploadTime: Date.now()
     }).key;

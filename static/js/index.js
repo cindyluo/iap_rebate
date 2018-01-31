@@ -26,11 +26,14 @@ $(function () {
   $('.selected-flag').text('TW +886');
 
   $('.js-submit').on('click', function () {
-    var intlNumber = $("#phone").intlTelInput("getNumber");
-    var isValid = $("#phone").intlTelInput("isValidNumber");
+    var phone = $('#phone').val();
+    var formatNumber = libphonenumber.format(phone, 'TW', 'E.164');
+    var isValid = libphonenumber.isValidNumber(phone, 'TW');
     if (!isValid) {
       $('.number-error').show();
     }
+
+    console.log(libphonenumber.isValidNumber(phone, 'TW'));
 
     var name = $('#name').val();
     if (!$.trim(name).length) {
@@ -43,15 +46,15 @@ $(function () {
       $('.email-error').show();
     }
 
-    console.log(intlNumber);
     console.log(isValid);
     console.log(name);
     console.log(email);
+    console.log(formatNumber);
 
     var database = firebase.database().ref('iap_list');
     var key = database.push({
       userName: name,
-      userPhone: intlNumber,
+      userPhone: formatNumber,
       userEmail: email,
       uploadTime: Date.now()
     }).key;
