@@ -2,28 +2,51 @@
   <head>
     <meta charset="utf-8" />
     <title>IAP rebate</title>
-    <link rel="stylesheet" href="static/css/index.scss">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.7/css/intlTelInput.css">
+
   </head>
 
   <body>
     <div class="container">
       <div class="banner"></div>
+      <div class="user__form">
+        <div class="form__title">
+          <div class="title">好禮登錄資訊</div>
+          <div class="alert">＊為必填欄位</div>
+        </div>
+        <div class="form-group form__name">
+          <span class="form__label">*姓名</span>
+          <input class="form__input" id="name">
+        </div>
+        <div class="error name-error">請輸入姓名</div>
+        <div class="form-group form__phone">
+          <span class="form__label">*連絡電話</span>
+          <input type="tel" class="form__input" id="phone">
+        </div>
+        <div class="error number-error">請輸入正確電話</div>
+        <div class="form-group form__email">
+          <span class="form__label">*電子郵件</span>
+          <input class="form__input" id="email">
+        </div>
+        <div class="error email-error">請輸入電子郵件</div>
+      </div>
       <div class="rule">
-        <ul>
-          <li>活動期限為2018年2/22-2/27，於限定日期內成為"年繳方案"訂閱用戶，並且登錄正確資料，將可獲得面額為台幣兩百元的7-11線上商品卡。</li>
-          <li>將會透過簡訊發送商品卡，發送日期為2018.03.02</li>
-          <li>商品使用辦法請遵照http://www.7-11.com.tw/service/card.asp</li>
-          <li>本活動頁面登錄資訊僅供WC，將不做任何外部營利。</li>
+        <div class="form__title">
+          <div class="title">活動辦法與注意事項</div>
+        </div>
+        <ul class="rule__list">
+          <li class="rule__list-item">活動期限為2018年2/22-2/27，於限定日期內成為"年繳方案"訂閱用戶，並且登錄正確資料，將可獲得面額為台幣兩百元的7-11線上商品卡。</li>
+          <li class="rule__list-item">將會透過簡訊發送商品卡，發送日期為2018.03.02</li>
+          <li class="rule__list-item">商品使用辦法請遵照http://www.7-11.com.tw/service/card.asp</li>
+          <li class="rule__list-item">本活動頁面登錄資訊僅供WC，將不做任何外部營利。</li>
         </ul>
       </div>
-      <div class="user__form">
-        <form>
-          <div class="form-group">姓名</div>
-          <div class="form-group">連絡電話</div>
-          <div class="form-group">電子郵件</div>
-        </form>
-      </div>
+      <button class="form__submit-btn js-submit">送出</button>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.7/js/intlTelInput.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <script src="static/js/index.js"></script>
   </body>
 </html>

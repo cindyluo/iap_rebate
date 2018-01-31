@@ -1,0 +1,125 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #deffe2;
+  padding: 0;
+  margin: 0;
+}
+
+.banner {
+  background-image: url('../images/banner-mobile.png');
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 100% 50%;
+  padding-bottom: 92%;
+
+  @media (min-width: 992px) {
+    background-image: url('../images/banner.png');
+    padding-bottom: 44%;
+  }
+}
+
+.user__form {
+  margin: 0 auto;
+  padding: 0 36px;
+
+  @media (min-width: 992px) {
+    max-width: 900px;
+  }
+}
+
+.form__title {
+  height: 26px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.form__title .title {
+  width: 50%;
+  display: inline-block;
+  float: left;
+  font-size: 14px;
+  line-height: 1.14;
+  color: #999999;
+}
+
+.form__title .alert {
+  width: 50%;
+  display: inline-block;
+  float: right;
+  font-size: 14px;
+  text-align: right;
+  line-height: 1.14;
+  color: #ff0000;
+}
+
+.form-group {
+  height: 32px;
+  margin-top: 15px;
+}
+
+.form__label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222222;
+  line-height: 32px;
+}
+
+.form__input {
+  width: 65%;
+  height: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(50, 125, 227, 0.1);
+  float: right;
+  padding: 8.5px 10px;
+
+  @media (min-width: 992px) {
+    width: 85%;
+  }
+}
+
+.intl-tel-input .selected-flag {
+  font-size: 11px;
+  width: 62px !important;
+  padding-top: 5px !important;
+}
+
+.intl-tel-input input[type=tel] {
+  padding-right: 0 !important;
+  padding-left: 62px;
+}
+
+.intl-tel-input .flag-container {
+  left: 0;
+}
+
+.error {
+  display: none;
+  color: red;
+}
+
+.rule {
+  max-width: 900px;
+  margin: 25px auto 0;
+  padding: 0 36px;
+}
+
+.rule__list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.form__submit-btn {
+  display: block;
+  width: 70%;
+  max-width: 210px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: #cc0202;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 40px;
+  color: #ffffff;
+}
