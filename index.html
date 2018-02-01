@@ -2,14 +2,15 @@
   <head>
     <meta charset="utf-8" />
     <title>IAP rebate</title>
+    <link rel="icon" type="image/png" href="static/images/app_icon.png" />
     <link rel="stylesheet" href="static/css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.7/css/intlTelInput.css">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
   </head>
 
   <body>
     <div class="container">
       <div class="banner"></div>
+      <div class="uid"></div>
       <div class="user__form">
         <div class="form__title">
           <div class="title">好禮登錄資訊</div>
@@ -19,30 +20,31 @@
           <span class="form__label">*姓名</span>
           <input class="form__input" id="name">
         </div>
-        <div class="error name-error">請檢查是否有空白</div>
+        <div class="error name-error"><img class="error-icon" src="static/images/error_icon.png">請檢查是否有空白</div>
         <div class="form-group form__phone">
           <span class="form__label">*連絡電話</span>
           <input type="tel" class="form__input" id="phone">
         </div>
-        <div class="error number-error">請填寫台灣區手機號碼</div>
+        <div class="error number-error"><img class="error-icon" src="static/images/error_icon.png">請填寫台灣區手機號碼</div>
         <div class="form-group form__email">
           <span class="form__label">*電子郵件</span>
           <input class="form__input" id="email">
         </div>
-        <div class="error email-error">請填寫正確之Email</div>
+        <div class="error email-error"><img class="error-icon" src="static/images/error_icon.png">請填寫正確之Email</div>
       </div>
       <div class="rule">
         <div class="rule__title">活動辦法與注意事項</div>
         <ul class="rule__list">
-          <li class="rule__list-item">活動期限為2018年2/22-2/27，於限定日期內成為"年繳方案"訂閱用戶，並且登錄正確資料，將可獲得面額為台幣兩百元的7-11線上商品卡。</li>
-          <li class="rule__list-item">將會透過簡訊發送商品卡，發送日期為2018.03.02</li>
-          <li class="rule__list-item">商品使用辦法請遵照http://www.7-11.com.tw/service/card.asp</li>
-          <li class="rule__list-item">本活動頁面登錄資訊僅供WC，將不做任何外部營利。</li>
+          <li class="rule__list-item">活動期限為<strong style="color:#cc0202;">2018年2/22-2/28</strong>，於限定日期內成為“年繳方案”訂閱用戶，並且登錄正確資料，將可獲得面額為台幣兩百元的7-11線上商品卡。<br>*註:此活動參與對象限為新訂閱用戶，原年繳方案續訂者，不數活動發放對象。</li>
+          <li class="rule__list-item">本活動結束後將會透過簡訊發送線上商品卡，發送日期為<strong style="color:#cc0202;">2018.03.05</strong>。</li>
+          <li class="rule__list-item">商品卡使用辦法請遵照<a href="http://www.7-11.com.tw/service/card.asp">http://www.7-11.com.tw/service/card.asp</a></li>
+          <li class="rule__list-item">本活動頁面登錄資訊僅供Whoscall使用，絕不對外公布。</li>
         </ul>
       </div>
       <button class="form__submit-btn js-submit">送出</button>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script src="static/js/vendor/libphonenumber-js.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/libphonenumber-js/1.0.7/libphonenumber-js.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <script src="static/js/index.js"></script>

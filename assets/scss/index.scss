@@ -30,6 +30,19 @@ html, body {
   }
 }
 
+.uid {
+  margin: 0 auto;
+  padding: 0 36px;
+  max-width: unset;
+  color: #ff0000;
+  font-size: 16px;
+  line-height: 30px;
+
+  @media (min-width: 992px) {
+    max-width: 900px;
+  }
+}
+
 .form__title {
   height: 26px;
   border-bottom: 1px solid #e6e6e6;
@@ -103,18 +116,19 @@ html, body {
   max-width: calc(100% - 100px);
   font-size: 11px;
   color: #ff0000;
-  padding: 0 0 0 34%;
-  background-image: url('../images/error_icon.png');
-  background-repeat: no-repeat;
-  background-size: 10px 10px;
-  background-position: 30% 50%;
+  padding: 0 0 0 30%;
   margin-top: 5px;
 
   @media (min-width: 992px) {
     width: 85%;
-    padding: 0 0 0 15%;
-    background-position: 13% 50%;
+    padding: 0 0 0 13%;
   }
+}
+
+.error-icon {
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
 }
 
 .rule {
@@ -145,7 +159,7 @@ html, body {
   width: 70%;
   max-width: 210px;
   height: 40px;
-  margin: 0 auto;
+  margin: 20px auto;
   background-color: #cc0202;
   font-size: 16px;
   font-weight: 600;
