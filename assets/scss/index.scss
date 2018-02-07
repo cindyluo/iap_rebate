@@ -6,6 +6,10 @@ html, body {
   margin: 0;
 }
 
+.container {
+  padding: 20px 0;
+}
+
 .banner {
   background-image: url('../images/banner-mobile.png');
   width: 100%;
@@ -159,7 +163,7 @@ html, body {
   width: 70%;
   max-width: 210px;
   height: 40px;
-  margin: 20px auto;
+  margin: 20px auto 0;
   background-color: #cc0202;
   font-size: 16px;
   font-weight: 600;

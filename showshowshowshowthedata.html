@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  table{
+  	width: 100%;
+  }
+  th,td{
+    border-right: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+  }
+  button{
+  	background-color: #00c300;
+  	color: #fff;
+  	border: none;
+  	padding: 10px;
+  	width: 120px;
+  }
+	</style>
+  <link rel="icon" type="image/png" href="./static/images/app_icon.png" />
+</head>
+
+<body>
+	<button class="signin">google sign in</button>
+	<button class="signout">google sign out</button>
+  <table class="data-container">
+    <tr>
+      <th class="fixed">id</th>
+      <th>userID</th>
+      <th>userName</th>
+      <th>userPhone</th>
+      <th>userEmail</th>
+      <th>uploadTime</th>
+    </tr>
+  </table>
+</body>
+<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js?v=55d40355ccd731787c62cacffc090d89"></script>
+<script src="./static/js/showshowshowshowthedata.js"></script>
+
+</html>

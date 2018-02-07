@@ -27,9 +27,9 @@ $(() => {
     $('.email-error').hide();
 
     const phone = $('#phone').val();
-    const formatNumber = libphonenumber.format(phone, 'TW', 'International');
+    const phoneRegex = /((?=(09))[0-9]{10})$/;
     const isValid = libphonenumber.isValidNumber(phone, 'TW');
-    if (!isValid) {
+    if (!isValid || !phoneRegex.test(phone)) {
       $('.number-error').show();
     }
 
@@ -39,8 +39,8 @@ $(() => {
     }
 
     const email = $('#email').val();
-    const mail_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    if(!$.trim(name).length || !mail_regex.test(email)) {
+    const mailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if(!$.trim(name).length || !mailRegex.test(email)) {
       $('.email-error').show();
     }
 
@@ -49,7 +49,7 @@ $(() => {
       let key = database.push({
         userID: uid,
         userName: name,
-        userPhone: formatNumber,
+        userPhone: phone,
         userEmail: email,
         uploadTime: Date.now()
       }).key;
@@ -57,7 +57,12 @@ $(() => {
       console.log('upload');
 
       setTimeout(() => {
-        alert('新年快樂');
+        if (navigator.onLine) { // true|false
+          alert('新年快樂');
+        } else {
+          alert('無網路');
+        }
+        // alert('新年快樂');
         location.reload();
       }, 1000);
     }
