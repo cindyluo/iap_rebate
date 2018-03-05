@@ -20,9 +20,6 @@ $(function () {
     uid = unescape(urlParam[2]);
   }
 
-  console.log(uid);
-  $('.uid').text("uid: " + uid);
-
   $('.js-submit').on('click', function () {
     $('.number-error').hide();
     $('.name-error').hide();
@@ -56,8 +53,6 @@ $(function () {
         uploadTime: Date.now()
       }).key;
 
-      console.log('upload');
-
       setTimeout(function () {
         if (navigator.onLine) {
           // true|false
@@ -65,8 +60,7 @@ $(function () {
         } else {
           alert('無網路');
         }
-        // alert('新年快樂');
-        location.reload();
+        $('.form__input').val('');
       }, 1000);
     }
   });
