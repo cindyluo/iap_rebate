@@ -24,6 +24,14 @@ $(function () {
     $('.number-error').hide();
     $('.name-error').hide();
     $('.email-error').hide();
+    $('.rule-error').hide();
+
+    var ruleCheckbox = $('#rule__checkbox');
+    if (!ruleCheckbox.is(':checked')) {
+      $('.rule-error').show();
+      $('.rule__block').slideUp();
+      $('.js-rule-arrow').removeClass('arrow-rotated');
+    }
 
     var phone = $('#phone').val();
     var phoneRegex = /((?=(09))[0-9]{10})$/;
@@ -43,7 +51,7 @@ $(function () {
       $('.email-error').show();
     }
 
-    if ($('.number-error').is(':hidden') && $('.name-error').is(':hidden') && $('.email-error').is(':hidden')) {
+    if ($('.rule-error').is(':hidden') && $('.number-error').is(':hidden') && $('.name-error').is(':hidden') && $('.email-error').is(':hidden')) {
       var database = firebase.database().ref('iap_list');
       var key = database.push({
         userID: uid,
@@ -56,12 +64,46 @@ $(function () {
       setTimeout(function () {
         if (navigator.onLine) {
           // true|false
-          alert('新年快樂');
+          $.blockUI({
+            message: $('.submit-success-dialogue'),
+            css: {
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              border: '0',
+              cursor: 'default',
+              'background-color': 'rgba(0, 0, 0, 0.6)'
+            }
+          });
         } else {
           alert('無網路');
         }
         $('.form__input').val('');
+        $('#rule__checkbox').prop('checked', false);
       }, 1000);
     }
+  });
+
+  $('.js-rule-link').on('click', function () {
+    var $ruleBlock = $('.rule__block');
+    var ruleVisible = $ruleBlock.is(':visible');
+
+    $('.rule-error').hide();
+
+    if (ruleVisible) {
+      $ruleBlock.slideUp();
+      $('.js-rule-arrow').removeClass('arrow-rotated');
+    } else {
+      $ruleBlock.slideDown(1000);
+      $('.js-rule-arrow').addClass('arrow-rotated');
+    }
+  });
+
+  $('.js-rule-link').trigger('click');
+  $('#rule__checkbox').prop('checked', false);
+
+  $('.js-ok-btn').on('click', function () {
+    $.unblockUI();
   });
 });

@@ -33,40 +33,83 @@
         </div>
         <div class="form-group form__name">
           <span class="form__label">*姓名</span>
-          <input class="form__input" id="name">
+          <input class="form__input" id="name" placeholder="請填寫真實姓名，以便兌獎">
         </div>
         <div class="error name-error"><img class="error-icon" src="static/images/error_icon.png">請檢查是否有空白</div>
         <div class="form-group form__phone">
-          <span class="form__label">*連絡電話</span>
-          <input type="tel" class="form__input" id="phone" placeholder="例如：0912345678">
+          <span class="form__label form__label--2row">*連絡電話<br><span class="form__subtitle">(台灣門號)</span></span>
+          <input type="tel" class="form__input" id="phone" placeholder="此號碼用於兌獎 填寫錯誤不補發">
         </div>
         <div class="error number-error"><img class="error-icon" src="static/images/error_icon.png">請填寫台灣區手機號碼</div>
         <div class="form-group form__email">
           <span class="form__label">*電子郵件</span>
-          <input class="form__input" id="email" placeholder="請輸入於GooglePlay之付費帳號">
+          <input class="form__input" id="email" placeholder="請輸入於 GooglePlay 之付費帳號">
         </div>
         <div class="error email-error"><img class="error-icon" src="static/images/error_icon.png">請填寫正確之Email</div>
       </div>
       <div class="rule">
         <div class="rule__title">活動辦法與注意事項</div>
-        <ul class="rule__list">
-          <li class="rule__list-item">活動期限為<strong style="color:#cc0202;">2018年2月22日00點00分-2018年2月28日23點59分</strong>，於限定日期內成為“年繳方案”訂閱用戶，並且登錄正確資料，將可獲得面額為台幣兩百元的7-11線上商品卡(數量有限，送完為止)。</li>
-          <li class="rule__list-item">此活動參與對象限為新訂閱用戶，原年繳方案續訂者，不屬活動發放對象。</li>
-          <li class="rule__list-item">本活動結束後將會透過簡訊發送線上商品卡，發送日期為 <strong style="color:#cc0202;">2018.03.08-2018.03.09</strong>。</li>
-          <li class="rule__list-item">本活動僅限使用台灣門號購買之用戶，其他國家電話號碼之用戶，不屬活動發放對象。</li>
-          <li class="rule__list-item">本活動7-11線上商品卡使用辦法請遵照 <a href="http://www.7-11.com.tw/service/card.asp">http://www.7-11.com.tw/service/card.asp</a></li>
-          <li class="rule__list-item">主辦單位有權檢視各活動參加者之活動參與行為及中獎情形是否涉嫌例，若有違反常理或涉嫌不法之異常狀況者、或登錄資料不實或不正確，或有違反活動規範之行為，主辦單位保留變更、終止本活動及審核參加者參加活動資格之權利。</li>
-          <li class="rule__list-item">參加者於參加本活動之同時，即同意接受本活動之活動辦法與注意事項之規範，如有違反者得取消其參加或得獎者資格。</li>
-          <li class="rule__list-item">對於個人資料，僅做為本活動聯絡用，活動執行單位將善盡保密之責，不做其他用途亦不會對外洩漏。</li>
-          <li class="rule__list-item">本活動如有任何因電腦、網路、電話、技術或不可歸責於主辦單位之事由，而使系統服務停止、中斷、誤送活動訊息，或使參加者所寄出或登錄之資料有遲延、遺失、錯誤、無法辨識或毀損之情況，主辦單位不負任何法律責任，參加者亦不得因此異議。</li>
-          <li class="rule__list-item">Whoscall 保有活動最終解釋權及更改活動之權利。</li>
-        </ul>
+        <label class="rule__check">我已詳閱並同意「活動辦法」及「注意事項」並提供個人資料作為活動參加使用。
+          <input type="checkbox" id="rule__checkbox" name="rule__checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <div class="rule__link js-rule-link">詳見活動辦法與注意事項<img class="rule__arrow js-rule-arrow" src="static/images/arrow_icon.png"></div>
+        <div class="error rule-error"><img class="error-icon" src="static/images/error_icon.png">請詳閱並同意「活動辦法」及「注意事項」</div>
+        <div class="rule__block">
+          <span style="font-weight: 600;">Whoscall 「好禮雙重送」</span><br>
+          <span style="font-weight: 600;">活動辦法與注意事項</span><br><br>
+          年訂戶 買就送
+          <ul class="rule__list">
+            <li class="rule__list-item"><span class="rule__hl">活動對象：Whoscall年繳訂閱用戶（限台灣門號)</span></li>
+            <li class="rule__list-item"><span class="rule__hl">於即日起至2018年3月15日23點59分</span>（台灣時間）內成為“年繳方案”訂閱用戶，並且登錄正確資料，將可獲贈7-11線上商品卡（市價 $150 元）。</li>
+            <li class="rule__list-item">本活動結束後將會透過簡訊發送線上商品卡，且僅接受訂閱用戶以訂購之行動電話門號受領商品卡，<span class="rule__hl">發送日期為 2018.03.21-2018.03.23。</li>
+            <li class="rule__list-item">簡訊發送後不再另行通知，參加者應自行確認是否收到商品卡。參加者如未於前開期間內收到商品卡時，應於 2018.03.23 前以信件向主辦單位反應，否則即視為已受領。</li>
+            <li class="rule__list-item">本活動之贈品數量有限，總計共 6000 份，將依照登錄時間依序發送至送完為止。</a></li>
+            <li class="rule__list-item">本活動之贈品不得兌換為現金。</li>
+            <li class="rule__list-item">本活動贈品 7-11 線上商品卡使用辦法請遵照 <a href="http://www.7-11.com.tw/service/card.asp">http://www.7-11.com.tw/service/card.asp</a> 所公示之約定，主辦單位對於 7-11 線上商品卡之使用爭議不負任何責任。</li>
+            <li class="rule__list-item">主辦單位之現職員工恕不得參加本活動。</li>
+          </ul>
+          大好禮 加碼抽
+          <ul class="rule__list">
+            <li class="rule__list-item"><span class="rule__hl">活動對象：Whoscall年繳訂閱用戶（限台灣門號）</span></li>
+            <li class="rule__list-item"><span class="rule__hl">於即日起至2018年3月15日23點59分</span>（台灣時間）內成為“年繳方案”訂閱用戶，並且登錄正確資料，即可擁有抽獎資格活動，獎品為 Dyson Pure Hot+Cool 三合一涼暖空氣清淨機 HP00 (白銀色)（市價$ 23,900元），總計 3 份，同一用戶(以門號及帳號別分別作確認)不得重複得獎 。</li>
+            <li class="rule__list-item"><span class="rule__hl">本活動結束後將會於 2018.03.22 進行抽獎並公布</span>得獎名單於 Whoscall 粉絲頁(<a href="https://www.facebook.com/WhosCall.Taiwan/">https://www.facebook.com/WhosCall.Taiwan/</a>)，得獎者須於 2018.03.30 前自行聯繫主辦單位，並由主辦單位確認個人資料後，將以Email寄出【領獎確認書】，得獎者應填妥【領獎確認書】正本並附上【身分證正反面影印本】、【發票正本】共三式文件，<span class="rule__hl">於 2018.04.13 前 (以郵戳為憑)，以掛號郵件寄回 Email 指定地址。</span>領獎確認書為稅務申報用，若資訊提供不完全視為放棄領獎資格。</li>
+            <li class="rule__list-item">加碼抽獎品將於 2018.04.30 前寄送獎品至得獎者告知之收件地址，得獎者若不願意配合以上領獎步驟，將視為自動棄權，不具領獎資格，本獎品項亦不再遞補重抽。</li>
+            <li class="rule__list-item">本次活動獎品寄送地址僅限於台灣、澎湖、金門、馬祖地區。</li>
+            <li class="rule__list-item">本次活動獎品將以一般掛號郵件或宅配寄至表單寫之領獎地點，獎品在郵寄或運送過程中，所造成之毀壞、錯遞、遲延或遺失等，主辦單位概不負責。</li>
+            <li class="rule__list-item">得獎者不得要求更改獎品、折換現金或指定獎品樣式，亦不得轉讓由他人領獎，轉讓領獎資格者，視為棄權，本獎品項亦不再遞補重抽。</li>
+            <li class="rule__list-item">本活動獎品 Dyson Pure Hot+Cool 三合一涼暖空氣清淨機 HP00 (白銀色)使用辦法請遵照戴森產品使用條款，主辦單位對於 Dyson Pure Hot+Cool 三合一涼暖空氣清淨機 HP00 (白銀色)之使用爭議不負任何責任。</li>
+            <li class="rule__list-item">主辦單位之現職員工恕不得參加本活動。</li>
+          </ul>
+          注意事項
+          <ul class="rule__list">
+            <li class="rule__list-item">本活動之參加者不得有侵害他人權利（包括但不限於使用自動化程式影響抽獎結果等）或違反法令之情事，如有違反，主辦單位得取消兌換資格並追回贈品，違反者除應自負法律責任，同時向主辦單位負損害賠償責任。</li>
+            <li class="rule__list-item">如有任何因電腦、網路、電話、技術或不可歸責於主辦單位之事由，而使參加者所登錄之資料有遲延、遺失、錯誤、無法辨識或毀損之情況，主辦單位不負任何法律責任，參加者亦不得因此異議。</li>
+            <li class="rule__list-item">依中華民國稅法規定，中獎價值在新台幣 1,000 元以上者，需繳交身分證正反面影本供報稅使用，年度報稅時將計入個人所得。贈品價值超過 NT$20,000 元(含)以上者，依法需繳交 10％ 稅金。中獎人若為未滿20歲者，應由法定代理人偕同領取與辦理，凡非中華民國國境內設籍之國人(即在中華民國境內居住未達183天之本國人及外國人)不論得獎人所得之金額，須就中獎所得扣繳20%機會中獎稅，若得獎者不願先行繳納本項稅金，視同放棄中獎資格，且不得異議，本獎品項亦不再遞補重抽。。</li>
+            <li class="rule__list-item">主辦單位保留更換本活動獎品為其他等值獎項及修改活動辦法之權利；如本活動因故無法執行時，主辦單位有權決定取消或暫停本活動。前述變更、修改、取消或暫停，主辦單位無需另行通知，依活動網頁公告訊息為準。</li>
+            <li class="rule__list-item">參加者同意主辦單位蒐集參加者之個人資料（包括姓名、手機門號、收寄地址、E-mail 等資料），僅作為本次活動之活動聯繫、活動公告、後續處理、聯絡及紀錄等行銷目的使用之用途。</li>
+            <li class="rule__list-item">主辦單位將妥為保存所蒐集之個人資料，並於各自之存續期間內依個人資料保護法及相關法令於上述活動以及行銷之目的內，於中華民國境內使用。主辦單位為達成前開所述目的得將所蒐集之參加者個人資料傳遞給為主辦單位進行資料維護、處理及寄送之服務供應商。</li>
+            <li class="rule__list-item">依個人資料保護法之規定，參加者可隨時向主辦單位要求查詢、請求給予複本、請求補充或更正、請求停止處理、利用或刪除您的個人資料。 收到參加者的要求後，主辦單位將在相關法令許可之範圍及合理期間內依參加者的要求進行處理，惟參加者應理解，一但要求主辦單位停止處理、利用或刪除您的個人資料時，將有可能失去參加抽獎或領獎之資格。</li>
+          </ul>
+        </div>
+
       </div>
       <button class="form__submit-btn js-submit">送出</button>
     </div>
+
+    <div class="popup">
+      <div class="submit-success-dialogue" style="display: none;">
+        <div class="popup__body">
+          資料成功送出！<br>所有活動資訊，都會在Whoscall粉絲專頁更新！<br><a href="https://www.facebook.com/WhosCall.Taiwan/">https://www.facebook.com/WhosCall.Taiwan/</a>
+        </div>
+        <button class="ok__btn js-ok-btn">確認</button>
+      </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- <script src="static/js/vendor/libphonenumber-js.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/libphonenumber-js/1.0.7/libphonenumber-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <script src="static/js/index.js"></script>
   </body>
