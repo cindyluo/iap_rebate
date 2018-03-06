@@ -106,4 +106,17 @@ $(function () {
   $('.js-ok-btn').on('click', function () {
     $.unblockUI();
   });
+
+  // Tracking
+  var dataJson = {
+    'subFolder': 'IAP_Rebate',
+    'ecInfo': {
+      'memberID': uid //請自行定義會員編號
+    },
+    'trackType': 'view',
+    'trackSubfolderDepth': 1,
+    'targetType': 'usual',
+    'source': 'whoscall'
+  };
+  ElandTracker.Track(dataJson);
 });
